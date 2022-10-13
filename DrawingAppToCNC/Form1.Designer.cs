@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.WriteButton3 = new System.Windows.Forms.Button();
+            this.OpenButton3 = new System.Windows.Forms.Button();
             this.OpenPortButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.WriteButton4 = new System.Windows.Forms.Button();
@@ -45,8 +48,6 @@
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.OpenButton3 = new System.Windows.Forms.Button();
-            this.WriteButton3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -89,6 +90,30 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(779, 451);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // WriteButton3
+            // 
+            this.WriteButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WriteButton3.Location = new System.Drawing.Point(198, 408);
+            this.WriteButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.WriteButton3.Name = "WriteButton3";
+            this.WriteButton3.Size = new System.Drawing.Size(186, 39);
+            this.WriteButton3.TabIndex = 11;
+            this.WriteButton3.Text = "書き込む";
+            this.WriteButton3.UseVisualStyleBackColor = true;
+            this.WriteButton3.Click += new System.EventHandler(this.writeFile);
+            // 
+            // OpenButton3
+            // 
+            this.OpenButton3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OpenButton3.Location = new System.Drawing.Point(4, 408);
+            this.OpenButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.OpenButton3.Name = "OpenButton3";
+            this.OpenButton3.Size = new System.Drawing.Size(186, 39);
+            this.OpenButton3.TabIndex = 10;
+            this.OpenButton3.Text = "開く...";
+            this.OpenButton3.UseVisualStyleBackColor = true;
+            this.OpenButton3.Click += new System.EventHandler(this.OpenFile);
             // 
             // OpenPortButton
             // 
@@ -258,39 +283,16 @@
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.receiveUart);
             // 
-            // OpenButton3
-            // 
-            this.OpenButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OpenButton3.Location = new System.Drawing.Point(4, 408);
-            this.OpenButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.OpenButton3.Name = "OpenButton3";
-            this.OpenButton3.Size = new System.Drawing.Size(186, 39);
-            this.OpenButton3.TabIndex = 10;
-            this.OpenButton3.Text = "開く...";
-            this.OpenButton3.UseVisualStyleBackColor = true;
-            this.OpenButton3.Click += new System.EventHandler(this.OpenFile);
-            // 
-            // WriteButton3
-            // 
-            this.WriteButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WriteButton3.Location = new System.Drawing.Point(198, 408);
-            this.WriteButton3.Margin = new System.Windows.Forms.Padding(4);
-            this.WriteButton3.Name = "WriteButton3";
-            this.WriteButton3.Size = new System.Drawing.Size(186, 39);
-            this.WriteButton3.TabIndex = 11;
-            this.WriteButton3.Text = "書き込む";
-            this.WriteButton3.UseVisualStyleBackColor = true;
-            this.WriteButton3.Click += new System.EventHandler(this.writeFile);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 451);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "DrawingApp";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
